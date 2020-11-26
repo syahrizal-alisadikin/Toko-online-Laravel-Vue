@@ -14,7 +14,7 @@ class CategoryController extends Controller
     {
         $categories = Category::latest()->when(request()->q, function ($categories) {
             $categories = $categories->where('name', 'like', '%' . request()->q . '%');
-        })->paginate(2);
+        })->paginate(5);
 
         return view('admin.category.index', compact('categories'));
     }
@@ -28,7 +28,7 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,jpg,png|max:2000',
-            'name'  => 'required|unique:categories'
+            // 'name'  => 'required|unique:categories'
         ]);
 
         // Upload Image

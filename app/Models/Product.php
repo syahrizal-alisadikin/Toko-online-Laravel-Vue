@@ -20,7 +20,7 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'fk_category_id', 'id');
     }
 
     public function carts()

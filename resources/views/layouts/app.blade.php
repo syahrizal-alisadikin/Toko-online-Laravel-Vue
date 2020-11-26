@@ -97,7 +97,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">KATEGORI & PRODUK</h6>
             <a class="collapse-item {{ Request::is('admin/category*') ? ' active' : '' }}" href="{{ route('admin.category.index') }}">KATEGORI</a>
-            <a class="collapse-item {{ Request::is('admin/product*') ? ' active' : '' }}" href="#">PRODUK</a>
+            <a class="collapse-item {{ Request::is('admin/product*') ? ' active' : '' }}" href="{{ route('admin.product.index') }}">PRODUK</a>
           </div>
         </div>
       </li>
