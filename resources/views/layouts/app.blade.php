@@ -127,17 +127,19 @@
           </a>
       </li>
 
-      <li class="nav-item {{ Request::is('admin/profile*') ? ' active' :  '' }}">
-        <a class="nav-link" href="#">
+    <li class="nav-item {{ Request::is('admin/profile*') ? ' active' :  '' }}">
+      <a class="nav-link" href="{{ route('admin.profile.index') }}">
           <i class="fas fa-user-circle"></i>
-          <span>PROFILE</span></a>
-      </li>
+          <span>PROFILE</span>
+        </a>
+    </li>
 
-      <li class="nav-item {{ Request::is('admin/user*') ? ' active' :  '' }}">
-        <a class="nav-link" href="#">
+    <li class="nav-item {{ Request::is('admin/user*') ? ' active' :  '' }}">
+      <a class="nav-link" href="{{ route('admin.user.index') }}">
           <i class="fas fa-users"></i>
-          <span>USERS</span></a>
-      </li>
+          <span>USERS</span>
+        </a>
+    </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -201,7 +203,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Hak Cipta Dilindungi &copy; 2020 Online Shop - SantriKoding.com </span>
+            <span>Hak Cipta Dilindungi &copy; 2020 Developed By Syahrizal As </span>
           </div>
         </div>
       </footer>
