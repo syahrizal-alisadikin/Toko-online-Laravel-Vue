@@ -54,7 +54,7 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
-            'passwod' => 'required'
+            'password' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -72,7 +72,9 @@ class AuthController extends Controller
 
         return response()->json([
             'success' => true,
-        ]);
+            'user'    => auth()->guard('api')->user(),
+            'token'   => $token
+        ], 201);
     }
 
     public function getUser()
