@@ -14,7 +14,7 @@ class Category extends Model
         'name', 'slug', 'image'
     ];
 
-    public function getImageAttributte($image)
+    public function getImageAttribute($image)
     {
         return asset('storage/categories/' . $image);
     }

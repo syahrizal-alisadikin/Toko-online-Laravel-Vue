@@ -45,7 +45,7 @@
                                     <th scope="row" style="text-align: center">
                                         {{ ++$no + ($categories->currentPage()-1) * $categories->perPage() }}</th>
                                     <td class="text-center">
-                                        <img src="{{ Storage::url('/categories/'.$category->image) }}"
+                                        <img src="{{ $category->image}}"
                                             style="width:50px">
                                     </td>
                                     <td class="text-center">{{ $category->name }}</td>
