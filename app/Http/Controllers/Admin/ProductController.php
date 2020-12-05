@@ -56,7 +56,7 @@ class ProductController extends Controller
 
         // Upload Image
         $image = $request->file('image');
-        $image->storeAs('public/poducts', $image->hashName());
+        $image->storeAs('public/products', $image->hashName());
 
         // save to db
         $product = Product::create([
