@@ -10,6 +10,7 @@ class CartController extends Controller
 {
     public function index()
     {
+        dd(auth()->guard('api')->user());
         $carts = Cart::with('product')
             ->where('fk_customer_id', auth()->guard('api')->user())
             ->latest()
