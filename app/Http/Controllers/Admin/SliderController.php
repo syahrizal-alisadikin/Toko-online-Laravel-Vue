@@ -105,7 +105,7 @@ class SliderController extends Controller
     public function destroy($id)
     {
         $slider = Slider::findOrFail($id);
-        $image = Storage::disk('local')->delete('public/sliders/' . $slider->image);
+        $image = Storage::disk('local')->delete('public/sliders/' . basename($slider->image));
         $slider->delete();
 
         if ($slider) {

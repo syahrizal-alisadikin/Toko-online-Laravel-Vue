@@ -72,7 +72,7 @@ class CategoryController extends Controller
             ]);
         } else {
             // Hapus Image Lama
-            Storage::disk('local')->delete('public/categories/' . $category->image);
+            Storage::disk('local')->delete('public/categories/' . basename($category->image));
 
             // upload image baru
             $image = $request->file('image');
@@ -98,7 +98,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::findOrFail($id);
-        $image = Storage::disk('local')->delete('public/categories/' . $category->image);
+        $image = Storage::disk('local')->delete('public/categories/' . basename($category->image));
         $category->delete();
 
         if ($category) {
