@@ -82,7 +82,7 @@ class CategoryController extends Controller
             $category = Category::findOrFail($category->id);
             $category->update([
                 'image' => $image->hashName(),
-                'image' => $request->name,
+                'name' => $request->name,
                 'slug'  => Str::slug($request->name, '-')
             ]);
         }
