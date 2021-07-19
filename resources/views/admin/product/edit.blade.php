@@ -130,7 +130,7 @@
 
 </div>
 <!-- /.container-fluid -->
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.8.2/tinymce.min.js"></script>
 <script>
     var editor_config = {
         selector: "textarea.content",
