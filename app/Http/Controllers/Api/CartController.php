@@ -91,7 +91,7 @@ class CartController extends Controller
     public function removeCart(Request $request)
     {
         Cart::with('product')
-            ->whereId('$request->cart_id')
+            ->whereId($request->cart_id)
             ->delete();
 
         return response()->json([
