@@ -22,7 +22,7 @@ class RajaOngkirController extends Controller
 
     public function getCities(Request $request)
     {
-        $city = City::where('fk_provinsi_id', $request->province_id)->get();
+        $city = City::where('fk_province_id', $request->province_id)->get();
         return response()->json([
             'success' => true,
             'message' => 'List data Cities By Provinces',
