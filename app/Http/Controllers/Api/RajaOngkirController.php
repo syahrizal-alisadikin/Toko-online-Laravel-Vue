@@ -32,11 +32,12 @@ class RajaOngkirController extends Controller
 
     public function checkOngkir(Request $request)
     {
+        dd($request->all());
         $cost =  RajaOngkir::ongkosKirim([
-            'origin' => 501, //ID kota / Kabupaten asal/ 113 adalah kode kota demak
-            'destination' => 114, //Id Kota //kabupaten tujuan
-            'weight' => 1700, // berat barang dalam gram
-            'courier' => "jne" // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
+            'origin' => 113, //ID kota / Kabupaten asal/ 113 adalah kode kota demak
+            'destination' => $request->city_destination, //Id Kota //kabupaten tujuan
+            'weight' => $request->weight, // berat barang dalam gram
+            'courier' => $request->courier // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
         ])->get();
 
         return response()->json([
