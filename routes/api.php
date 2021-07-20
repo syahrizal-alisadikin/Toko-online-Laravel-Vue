@@ -54,3 +54,9 @@ Route::post('/notificationHandler', [CheckoutController::class, 'notificationHan
  * Route API Slider
  */
 Route::get('/sliders', [SliderController::class, 'index'])->name('customer.slider.index');
+/**
+ * Route API Raja Ongkir
+ */
+Route::get('/rajaongkir/provinces', [RajaOngkirController::class, 'getProvinces'])->name('customer.rajaongkir.getProvinces');
+Route::get('/rajaongkir/cities', [RajaOngkirController::class, 'getCities'])->name('customer.rajaongkir.getCities');
+Route::post('/rajaongkir/checkOngkir', [RajaOngkirController::class, 'checkOngkir'])->name('customer.rajaongkir.checkOngkir');
