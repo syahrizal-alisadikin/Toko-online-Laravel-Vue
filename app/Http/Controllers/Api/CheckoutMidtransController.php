@@ -28,7 +28,12 @@ class CheckoutMidtransController extends Controller
 
     public function store()
     {
+<<<<<<< HEAD
 	
+=======
+
+       
+>>>>>>> ad42eafbc74dbd739ef11e8fc08aeb5e76675dd9
         DB::transaction(function () {
             /**
              * algorithm create no invoice
@@ -49,8 +54,8 @@ class CheckoutMidtransController extends Controller
                 'weight'            => $this->request->weight,
                 'name'              => $this->request->name,
                 'phone'             => $this->request->phone,
-                'province'          => $this->request->province,
-                'city'              => $this->request->city,
+                'province'          => $this->request->province_id,
+                'city'              => $this->request->city_id,
                 'address'           => $this->request->address,
                 'grand_total'       => $this->request->grand_total,
                 'status'            => 'pending',
