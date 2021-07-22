@@ -47,8 +47,8 @@ Route::post('/cart/removeAll', [CartController::class, 'removeAllCart'])->name('
 /**
  * Route Checkout Midtrans
  */
-Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
-Route::post('/notificationHandler', [CheckoutController::class, 'notificationHandler'])->name('notificationHanlder');
+Route::post('/checkout', [CheckoutMidtransController::class, 'store'])->name('checkout.store');
+Route::post('/notificationHandler', [CheckoutMidtransController::class, 'notificationHandler'])->name('notificationHanlder');
 
 /**
  * Route API Slider
