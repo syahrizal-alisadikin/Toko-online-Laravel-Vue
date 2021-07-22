@@ -28,6 +28,8 @@ class CheckoutMidtransController extends Controller
 
     public function store()
     {
+
+        dd(request()->all());
         DB::transaction(function () {
             /**
              * algorithm create no invoice
