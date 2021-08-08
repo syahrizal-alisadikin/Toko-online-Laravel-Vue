@@ -22,7 +22,7 @@ class OrderController extends Controller
     public function index()
     {
         $id = auth()->guard('api')->user()->id;
-        $invoice = Invoice::where('fk_customer_id', $id)->latest()->get();
+        $invoice = Invoice::where('fk_customer_id', $id)->latest()->paginate(2);
 
         return response()->json([
             'success' => true,
