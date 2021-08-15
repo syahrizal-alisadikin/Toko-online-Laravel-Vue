@@ -123,6 +123,7 @@ class CheckoutMidtransController extends Controller
 
         //data tranaction
         $data_transaction = Invoice::where('invoice', $orderId)->first();
+        dd($data_transaction);
         if ($transaction == 'capture') {
 
             // For credit card transaction, we need to check whether transaction is challenge by FDS or not
