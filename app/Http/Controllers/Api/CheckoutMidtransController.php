@@ -118,12 +118,11 @@ class CheckoutMidtransController extends Controller
 
         $transaction  = $notification->transaction_status;
         $type         = $notification->payment_type;
-        $orderId      = $notification->order_id;
         $fraud        = $notification->fraud_status;
+        $orderId      = $notification->order_id;
 
         //data tranaction
         $data_transaction = Invoice::where('invoice', $orderId)->first();
-        dd($data_transaction);
         if ($transaction == 'capture') {
 
             // For credit card transaction, we need to check whether transaction is challenge by FDS or not
